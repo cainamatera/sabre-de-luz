@@ -73,7 +73,7 @@ const mudarCor = (corHex) => {
     partesSabre.forEach(parte => {
         parte.malha.material.emissive.setHex(corHex);
         parte.malha.material.color.setHex(0xffffff);
-        parte.malha.material.emissiveIntensity = parte.ehCristal ? (intensity * 0.5) : intensidade;
+        parte.malha.material.emissiveIntensity = parte.ehCristal ? (intensidade * 0.5) : intensidade;
         parte.malha.material.needsUpdate = true;
     });
 };
