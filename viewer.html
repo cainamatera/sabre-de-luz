@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabre de luz</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #ffffff 0%, #e0e0e0 60%, #ffffff 100%);
+            font-family: sans-serif;
+        }
+
+        canvas {
+            display: block;
+            outline: none;
+        }
+
+        .nav-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 8px 15px;
+            background: rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            color: #333;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: rgba(0, 0, 0, 0.1);
+            transform: scale(1.05);
+        }
+
+        .seletor-cores {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 100;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .botao-cor {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .botao-cor:hover {
+            transform: scale(1.2);
+        }
+
+        #verde {
+            background: #00ff00;
+        }
+
+        #azul {
+            background: #0000ff;
+        }
+
+        #vermelho {
+            background: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="nav-btn">Home</a>
+    <div class="seletor-cores">
+        <div class="botao-cor" id="verde"></div>
+        <div class="botao-cor" id="azul"></div>
+        <div class="botao-cor" id="vermelho"></div>
+    </div>
+    <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+    <script type="module" src="viewer.js"></script>
+</body>
+
+</html>
